@@ -13,13 +13,19 @@
     <div class="containerCanvasAndSettings">
         <div class="canvas"></div> <!-- Resizable canvas -->
         <div class="settings"> <!-- Container of the settings (color chose button, color button, rainbow button, clear button, erase button, canvas resize slider / button)-->
+            <div class = "colorPicker">
+                <label for="colorpicker">Pick the color</label>
+                <input type="color" id="colorpicker">
+            </div>
             <button type="button" id = "color">Color</button>
             <button type="button" id = "rainbow">Rainbow</button>
             <button type="button" id = "clear">Clear</button>
             <button type="button" id = "erase">Erase</button>
+            <input type="range" min="2" max="64" value="16" id="slider">
         </div>
     </div>
     <div class="footer">Etch-a-sketch | Created for The Odin Project</div>
+    <script src="javascript.js"></script>
 </body>
 
 
