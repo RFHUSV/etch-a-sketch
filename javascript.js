@@ -19,3 +19,12 @@ function addCells (size) {
     }
 }
 
+const slider = document.querySelector('#slider')
+const sliderValue = document.querySelector('#sliderValue');
+sliderValue.innerHTML = `${slider.value}x${slider.value}`;
+
+slider.oninput = function() {
+    sliderValue.innerHTML = `${slider.value}x${slider.value}`;
+}
+
+
