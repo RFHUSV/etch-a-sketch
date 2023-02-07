@@ -1,6 +1,7 @@
 function addRows (size) {
+    const canvas = document.querySelector('.canvas');
+    canvas.innerHTML = '';
     for (let i = 0; i < size; i++) {
-        const canvas = document.querySelector('.canvas');
         const row = document.createElement('div');
         row.classList.add(`row${i}`);
         canvas.appendChild(row);
@@ -19,12 +20,22 @@ function addCells (size) {
     }
 }
 
+window.onload = function () {
+    addRows(16);
+    addCells(16);
+}
+
 const slider = document.querySelector('#slider')
 const sliderValue = document.querySelector('#sliderValue');
 sliderValue.innerHTML = `${slider.value}x${slider.value}`;
 
 slider.oninput = function() {
     sliderValue.innerHTML = `${slider.value}x${slider.value}`;
+    addRows(slider.value);
+    addCells(slider.value);
 }
+
+
+
 
 
