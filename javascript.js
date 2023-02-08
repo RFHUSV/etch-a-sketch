@@ -68,6 +68,14 @@ clearBtn.addEventListener('click', () => {
     color = false;
     rainbow = false;
     clear = true;
+    blackBtn.style.backgroundColor = '#C2CAD0';
+    clearBtn.style.backgroundColor = '#0B0C10';
+    clearBtn.style.color = '#C2CAD0';
+    colorBtn.style.backgroundColor = '#C2CAD0';
+    rainbowBtn.style.backgroundColor = '#C2CAD0';
+    blackBtn.style.color = '#0B0C10';
+    colorBtn.style.color = '#0B0C10';
+    rainbowBtn.style.color = '#0B0C10';
 })
 
 const colorBtn = document.querySelector('#color');
@@ -76,6 +84,14 @@ colorBtn.addEventListener('click', () => {
     black = false;
     rainbow = false;
     color = true;
+    blackBtn.style.backgroundColor = '#C2CAD0';
+    clearBtn.style.backgroundColor = '#C2CAD0';
+    colorBtn.style.backgroundColor = '#0B0C10';
+    colorBtn.style.color = '#C2CAD0';
+    rainbowBtn.style.backgroundColor = '#C2CAD0';
+    blackBtn.style.color = '#0B0C10';
+    clearBtn.style.color = '#0B0C10';
+    rainbowBtn.style.color = '#0B0C10';
 })
 
 const blackBtn = document.querySelector('#black');
@@ -84,6 +100,14 @@ blackBtn.addEventListener('click', () => {
     color = false;
     rainbow = false;
     black = true;
+    blackBtn.style.backgroundColor = '#0B0C10';
+    blackBtn.style.color = '#C2CAD0';
+    clearBtn.style.backgroundColor = '#C2CAD0';
+    colorBtn.style.backgroundColor = '#C2CAD0';
+    rainbowBtn.style.backgroundColor = '#C2CAD0';
+    clearBtn.style.color = '#0B0C10';
+    colorBtn.style.color = '#0B0C10';
+    rainbowBtn.style.color = '#0B0C10';  
 })
 
 const rainbowBtn = document.querySelector('#rainbow');
@@ -92,4 +116,12 @@ rainbowBtn.addEventListener('click', () => {
     color = false;
     black = false;
     rainbow = true;
+    blackBtn.style.backgroundColor = '#C2CAD0';
+    clearBtn.style.backgroundColor = '#C2CAD0';
+    colorBtn.style.backgroundColor = '#C2CAD0';
+    rainbowBtn.style.backgroundColor = '#0B0C10';
+    rainbowBtn.style.color = '#C2CAD0';
+    blackBtn.style.color = '#0B0C10';
+    clearBtn.style.color = '#0B0C10';
+    colorBtn.style.color = '#0B0C10';
 })
