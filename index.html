@@ -4,29 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etch a sketch</title>
+    <title>ETCH A SKETCH</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <h1>Etch a sketch</h1> <!-- Header -->
+<div class="mainContainer">
+    <h1>ETCH A SKETCH</h1>
     <div class="containerCanvasAndSettings">
-        <div class="canvas"></div> <!-- Resizable canvas -->
-        <div class="settings"> <!-- Container of the settings (color chose button, color button, rainbow button, clear button, erase button, canvas resize slider / button)-->
-            <button type="button" id="black">Black</button>
-            <div class = "colorPicker">
-                <label for="colorpicker">Pick the color</label>
-                <input type="color" id="colorpicker">
-            </div>
-            <button type="button" id = "color">Color</button>
-            <button type="button" id = "rainbow">Rainbow</button>
-            <button type="button" id = "clear">Clear</button>
-            <button type="button" id = "erase">Erase</button>
-            <input type="range" min="4" max="64" value="16" id="slider">
-            <div id="sliderValue"></div> 
+        <div class="leftButtons">
+            <button type="button" id="black">BLACK</button>
+            <button type="button" id = "clear">CLEAR</button>
+            <button type="button" id = "erase">ERASE</button>
         </div>
+        <div class="canvas">
+        </div> 
+            <div class="rightButtons">
+                <div class="colorContainer">    
+                    <input type="color" id="colorpicker">
+                </div>
+                <button type="button" id = "color">COLOR</button>
+                <button type="button" id = "rainbow">RAINBOW</button>
+            </div>
     </div>
-    <div class="footer">Etch-a-sketch | Created for The Odin Project</div>
+    <div class="slderContainer">
+        <input type="range" min="4" max="64" value="16" id="slider">
+        <div id="sliderValue"></div> 
+    </div>
+</div>
+    <div class="footer">CREATED FOR THE ODIN PROJECT</div>
     <script src="javascript.js"></script>
 </body>
 
