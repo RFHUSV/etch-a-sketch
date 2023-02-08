@@ -11,6 +11,7 @@ function addRows (size) {
 
 let clear = false;
 let color = false;
+let rainbow = false;
 let black = true;
 
 function addCells (size) {
@@ -30,7 +31,10 @@ function addCells (size) {
                     cell.style.backgroundColor = colorValue;
                 } else if(black) {
                     cell.style.backgroundColor = 'black';
-                } 
+                } else if (rainbow) {
+                    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+                    cell.style.backgroundColor = '#' + randomColor;
+                }
             });
         }
     }
@@ -62,6 +66,7 @@ const clearBtn = document.querySelector('#clear');
 clearBtn.addEventListener('click', () => {
     black = false;
     color = false;
+    rainbow = false;
     clear = true;
 })
 
@@ -69,6 +74,7 @@ const colorBtn = document.querySelector('#color');
 colorBtn.addEventListener('click', () => {
     clear = false;
     black = false;
+    rainbow = false;
     color = true;
 })
 
@@ -76,5 +82,14 @@ const blackBtn = document.querySelector('#black');
 blackBtn.addEventListener('click', () => {
     clear = false;
     color = false;
+    rainbow = false;
     black = true;
+})
+
+const rainbowBtn = document.querySelector('#rainbow');
+rainbowBtn.addEventListener('click', () => {
+    clear = false;
+    color = false;
+    black = false;
+    rainbow = true;
 })
