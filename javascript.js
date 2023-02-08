@@ -1,4 +1,5 @@
 function addRows (size) {
+    cellsArray = [];
     const canvas = document.querySelector('.canvas');
     canvas.innerHTML = '';
     for (let i = 0; i < size; i++) {
@@ -8,7 +9,12 @@ function addRows (size) {
     }
 }
 
+let clear = false;
+let color = false;
+let black = true;
+
 function addCells (size) {
+    clear = false;
     for (let i = 0; i < size; i++) {
         const row = document.querySelector(`.row${i}`);
         row.setAttribute('style', 'display : flex; flex : 1;')
@@ -16,6 +22,16 @@ function addCells (size) {
             const cell = document.createElement('div');
             cell.classList.add('cells');
             row.appendChild(cell);
+            cell.addEventListener('mousemove', () => {
+                if (clear) {
+                    cell.style.backgroundColor = 'white';
+                } else if (color) {
+                    colorValue = document.querySelector('#colorpicker').value;
+                    cell.style.backgroundColor = colorValue;
+                } else if(black) {
+                    cell.style.backgroundColor = 'black';
+                } 
+            });
         }
     }
 }
@@ -35,7 +51,30 @@ slider.oninput = function() {
     addCells(slider.value);
 }
 
+function makeBlack() {
+    this.classList.add('black');
+}
 
+const erase = document.querySelector('#erase');
+erase.addEventListener('click', slider.oninput);
 
+const clearBtn = document.querySelector('#clear');
+clearBtn.addEventListener('click', () => {
+    black = false;
+    color = false;
+    clear = true;
+})
 
+const colorBtn = document.querySelector('#color');
+colorBtn.addEventListener('click', () => {
+    clear = false;
+    black = false;
+    color = true;
+})
 
+const blackBtn = document.querySelector('#black');
+blackBtn.addEventListener('click', () => {
+    clear = false;
+    color = false;
+    black = true;
+})
