@@ -23,19 +23,29 @@ function addCells (size) {
             const cell = document.createElement('div');
             cell.classList.add('cells');
             row.appendChild(cell);
-            cell.addEventListener('mousemove', () => {
-                if (clear) {
-                    cell.style.backgroundColor = 'white';
-                } else if (color) {
-                    colorValue = document.querySelector('#colorpicker').value;
-                    cell.style.backgroundColor = colorValue;
-                } else if(black) {
-                    cell.style.backgroundColor = 'black';
-                } else if (rainbow) {
-                    const randomColor = Math.floor(Math.random()*16777215).toString(16);
-                    cell.style.backgroundColor = '#' + randomColor;
-                }
-            });
+            let isDown = false;
+            const canvasList = document.querySelector('.canvas');
+            canvasList.addEventListener('mousedown', () => {
+                isDown = true;
+            })
+            canvasList.addEventListener('mouseup', () => {
+                isDown = false;
+            })
+                cell.addEventListener('mouseenter', () => {
+                    if (isDown === true) {
+                        if (clear) {
+                            cell.style.backgroundColor = 'white';
+                        } else if (color) {
+                            colorValue = document.querySelector('#colorpicker').value;
+                            cell.style.backgroundColor = colorValue;
+                        } else if(black) {
+                            cell.style.backgroundColor = 'black';
+                        } else if (rainbow) {
+                            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+                            cell.style.backgroundColor = '#' + randomColor;
+                        }
+                    }
+                });
         }
     }
 }
