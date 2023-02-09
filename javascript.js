@@ -8,6 +8,7 @@ function addRows (size) {
         canvas.appendChild(row);
     }
 }
+let isDown = false;
 
 let clear = false;
 let color = false;
@@ -23,7 +24,7 @@ function addCells (size) {
             const cell = document.createElement('div');
             cell.classList.add('cells');
             row.appendChild(cell);
-            let isDown = false;
+            
             const canvasList = document.querySelector('.canvas');
             canvasList.addEventListener('mousedown', () => {
                 isDown = true;
